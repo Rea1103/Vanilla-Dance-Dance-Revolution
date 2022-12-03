@@ -94,7 +94,6 @@ class GamePage(Frame):
 
         # creating a line at the background
         self.line = self.canvas.create_line(0,700,self.width,700, fill='black', width=4)
-        #self.line_check = self.canvas.create_line(0,620,self.width,620, fill='yellow', width=4)
 
         # creating a label to show the number of lives the player has
         self.lives_message = 'Lives left: X X X'
@@ -207,9 +206,7 @@ class GamePage(Frame):
         
         # case 1: player hits the correct button at the correct time/ y-coordinate of object
         if 610 <= pos[1] <= 620: # 10 frame interval
-            #self.canvas.itemconfig(self.line_check, fill='pink')
-            print(self.player_input, self.chosen_arrow[1])
-            print(self.player_input == self.chosen_arrow[1])
+            #print(self.player_input, self.chosen_arrow[1])
 
             # check if player input is correct
             if self.player_correct == False: # no correct input from player yet
@@ -266,7 +263,7 @@ class GamePage(Frame):
 
 
         # dropping animation, move 10 pixels every 0.05 seconds
-        self.canvas.move(self.arrow_1, 0, 10) # or 5, 40
+        self.canvas.move(self.arrow_1, 0, 10) # or move 5 pixles, after 40 miliseconds?
 
         self.after(70, self.drop) # recursive loop
 
