@@ -5,7 +5,7 @@ While most of us are glued to our seats to complete an assignment or project and
 It is simple and quick to install, perfect for creating a recreational corner in Think Tank Rooms. This game requires mainly 3 components: (1) an external input device and (2) an external monitor screen – both of which are connected to (3) a raspberry pi. The external input device can be either pressure plates or buttons placed on the floor to act as a dance platform for the players. The external input device is then connected to a raspberry pi which runs our python programme. For greater immersion, the larger the external monitor screen, the better. 
 
 ### To play the game
-Download the assets file and download either keyboard_controlled_game.py to play the game with only keyboard or download raspberry_game.py for an external buttons input.
+Download the assets file and download either keyboard_controlled_game.py to play the game with only keyboard or download raspberry_controlled_game.py for an external buttons input.
 
 
 ### Current problems
