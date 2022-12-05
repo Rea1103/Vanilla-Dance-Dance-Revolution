@@ -296,21 +296,25 @@ class TutorialPage(Frame):
 # setting up GPIO pins to bind the player's input
 GPIO.setmode(GPIO.BOARD) # uses physical numbering system
 
-#arrow left will use GPIO 23, physical pin: 16
-left_plate = 16
-GPIO.setup(left_plate, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+# connect one each plate/button to 5V pin while the other end connects to their respective GPIO
+# setting up GPIO pins to bind the player's input
+GPIO.setmode(GPIO.BOARD) # uses physical numbering system
 
-#arrow down will use GPIO 24, physical pin: 18
-down_plate = 18
-GPIO.setup(down_plate, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+#arrow left will use GPIO 17, physical pin: 11
+left_plate = 11
+GPIO.setup(left_plate, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-#arrow right will use GPIO 5, physical pin: 29
-right_plate = 29
-GPIO.setup(right_plate, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+#arrow down will use GPIO 23, physical pin: 16
+down_plate = 16
+GPIO.setup(down_plate, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-#arrow up will use GPIO 6, physical pin: 31
-up_plate = 31
-GPIO.setup(up_plate, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+#arrow right will use GPIO 24, physical pin: 18
+right_plate = 28
+GPIO.setup(right_plate, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+#arrow up will use GPIO 27, physical pin: 13
+up_plate = 13
+GPIO.setup(up_plate, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 
 # main code
