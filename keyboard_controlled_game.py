@@ -123,9 +123,15 @@ class GamePage(Frame):
         self.message = ['GO!', '1...', '2...', '3...'] # these messages will be pop() later on
         self.starting_label = Label(self, font=('Courier', 18), bg='white')
         self.starting_message = self.canvas.create_window(self.width//2-10, self.height//4, window=self.starting_label, anchor='nw')
-        self.starting_screen()
+        
+        
+    # overwriting the tkraise from the parent class Frame so that
+    # whenever the frame is called, do the starting sequence
+    def tkraise(self):
+        super().tkraise() # inherits tkraise() from parent class Frame
+        self.starting_screen() # adds on the self.starting_screen() sequence to start the game
 
-
+        
     # function that listens to the player's input
     def listen_input(self, event):
         # only valid keys are 'Left', 'Right', 'Up' and 'Down', which will be (input) validated later on
@@ -202,11 +208,10 @@ class GamePage(Frame):
     # (3) calculates score & lives remaining
     def drop(self):
         pos = self.canvas.coords(self.arrow_1) # returns [x, y]
-        #print(pos)
         
         # case 1: player hits the correct button at the correct time/ y-coordinate of object
         if 610 <= pos[1] <= 620: # 10 frame interval
-            #print(self.player_input, self.chosen_arrow[1])
+            #print(self.player_input, self.chosen_arrow[1]) # for debugging purposes
 
             # check if player input is correct
             if self.player_correct == False: # no correct input from player yet
