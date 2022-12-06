@@ -213,14 +213,13 @@ class GamePage(Frame):
     # (3) calculates score & lives remaining
     def drop(self):
         pos = self.canvas.coords(self.arrow_1) # returns [x, y]
-        #print(pos)
         
         # case 1: player hits the correct button at the correct time/ y-coordinate of object
         if 610 <= pos[1] <= 620: # 10 frame interval
             # code only listens for input at this specified range
             # hence when a player tries to give an answer early, it will be invalidated
             self.listen_input()
-            print(self.player_input, self.chosen_arrow[1])
+            # print(self.player_input, self.chosen_arrow[1]) # for debugging
 
             # check if player input is correct
             if self.player_correct == False: # no correct input from player yet
