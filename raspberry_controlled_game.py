@@ -122,7 +122,13 @@ class GamePage(Frame):
         self.message = ['GO!', '1...', '2...', '3...'] # these messages will be pop() later on
         self.starting_label = Label(self, font=('Courier', 18), bg='white')
         self.starting_message = self.canvas.create_window(self.width//2-10, self.height//4, window=self.starting_label, anchor='nw')
-        self.starting_screen()
+	
+	
+    # overwriting the tkraise from the parent class Frame so that
+    # whenever the frame is called, do the starting sequence
+    def tkraise(self):
+        super().tkraise() # inherits tkraise() from parent class Frame
+        self.starting_screen() # adds on the self.starting_screen() sequence to start the game
 
 
     # function that listens to the player's input
